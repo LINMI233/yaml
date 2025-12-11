@@ -1,7 +1,7 @@
 # frpc.toml - 客户端配置（无认证）
 
 # 服务器配置
-serverAddr = "154.36.153.5"
+serverAddr = "149.62.44.70"
 serverPort = 7500
 
 # 日志配置
