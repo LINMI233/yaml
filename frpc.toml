@@ -1,9 +1,116 @@
 serverAddr = "38.47.106.36"
 serverPort = 5432
 
+# ⭐⭐⭐⭐⭐ Toocans管理面板 (最高优先级)
 [[proxies]]
-name = "moonite_db"
-type = "tcp" 
-localIP = "172.16.0.10"
-localPort = 5432
-remotePort = 1111
+name = "manage-panel"
+type = "http"
+localIP = "172.20.208.92"
+localPort = 8080
+subDomain = "manage"
+customDomains = ["manage.bdy.local"]
+
+# ⭐⭐⭐⭐ Paypaz支付管理
+[[proxies]]
+name = "paypaz-admin"
+type = "http"
+localIP = "172.20.158.176"
+localPort = 8080
+subDomain = "paypaz"
+customDomains = ["paypaz.bdy.local"]
+
+# ⭐⭐⭐⭐ 钱包API 8082
+[[proxies]]
+name = "wallet-api-8082"
+type = "tcp"
+localIP = "172.20.8.159"
+localPort = 8082
+remotePort = 38082
+
+# ⭐⭐⭐⭐ 钱包API 8089
+[[proxies]]
+name = "wallet-api-8089"
+type = "tcp"
+localIP = "172.20.8.159"
+localPort = 8089
+remotePort = 38089
+
+# ⭐⭐⭐ 经纪API 8082
+[[proxies]]
+name = "broker-api-8082"
+type = "tcp"
+localIP = "172.20.197.228"
+localPort = 8082
+remotePort = 38082b
+
+# ⭐⭐⭐ 经纪API 8089
+[[proxies]]
+name = "broker-api-8089"
+type = "tcp"
+localIP = "172.20.197.228"
+localPort = 8089
+remotePort = 38089b
+
+# ⭐⭐⭐ 行情服务 8990
+[[proxies]]
+name = "market-quotation"
+type = "tcp"
+localIP = "172.20.73.205"
+localPort = 8990
+remotePort = 38990
+
+# ⭐⭐⭐ 行情服务 8089
+[[proxies]]
+name = "market-8089"
+type = "tcp"
+localIP = "172.20.73.205"
+localPort = 8089
+remotePort = 38089m
+
+# ⭐⭐ 钱包管理 8080
+[[proxies]]
+name = "wallet-manager"
+type = "tcp"
+localIP = "172.20.53.99"
+localPort = 8080
+remotePort = 38080
+
+# ⭐⭐ 钱包管理 8089
+[[proxies]]
+name = "wallet-manager-8089"
+type = "tcp"
+localIP = "172.20.53.99"
+localPort = 8089
+remotePort = 38089w
+
+# ⭐ gRPC服务 8083
+[[proxies]]
+name = "grpc-server"
+type = "tcp"
+localIP = "172.20.131.122"
+localPort = 8083
+remotePort = 38083
+
+# ⭐ 任务调度 8800
+[[proxies]]
+name = "snailjob"
+type = "tcp"
+localIP = "172.20.90.18"
+localPort = 8800
+remotePort = 38800
+
+# 🔍 监控端口 (管理面板)
+[[proxies]]
+name = "manage-monitor"
+type = "tcp"
+localIP = "172.20.208.92"
+localPort = 9000
+remotePort = 39000
+
+# 🔍 监控端口 (Paypaz)
+[[proxies]]
+name = "paypaz-monitor"
+type = "tcp"
+localIP = "172.20.158.176"
+localPort = 9000
+remotePort = 39001
