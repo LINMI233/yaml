@@ -1,0 +1,88 @@
+# frpc.toml - 客户端配置（无认证）
+
+# 服务器配置
+serverAddr = "154.36.153.5"
+serverPort = 7500
+
+# 日志配置
+log.to = "console"
+log.level = "info"
+
+# 连接池配置
+transport.poolCount = 5
+
+# ============================================
+# 内网服务代理配置
+# ============================================
+
+# 1. Broker API
+[[proxies]]
+name = "broker-api"
+type = "tcp"
+localIP = "172.20.197.228"
+localPort = 8082
+remotePort = 30001
+
+# 2. Wallet API
+[[proxies]]
+name = "wallet-api"
+type = "tcp"
+localIP = "172.20.8.159"
+localPort = 8082
+remotePort = 30002
+
+# 3. Wallet Manager
+[[proxies]]
+name = "wallet-manager"
+type = "tcp"
+localIP = "172.20.53.99"
+localPort = 8080
+remotePort = 30003
+
+# 4. Market Quotation
+[[proxies]]
+name = "market-quotation"
+type = "tcp"
+localIP = "172.20.73.205"
+localPort = 8990
+remotePort = 30004
+
+# 5. gRPC Server
+[[proxies]]
+name = "grpc-server"
+type = "tcp"
+localIP = "172.20.131.122"
+localPort = 8083
+remotePort = 30005
+
+# 6. SnailJob Server
+[[proxies]]
+name = "snailjob-server"
+type = "tcp"
+localIP = "172.20.90.18"
+localPort = 8800
+remotePort = 30006
+
+# 7. Manage Web
+[[proxies]]
+name = "manage-web"
+type = "tcp"
+localIP = "172.20.208.92"
+localPort = 8080
+remotePort = 30007
+
+# 8. PayPaz Admin Web
+[[proxies]]
+name = "paypaz-admin-web"
+type = "tcp"
+localIP = "172.20.158.176"
+localPort = 8080
+remotePort = 30008
+
+# 9. Broker OpenAPI
+[[proxies]]
+name = "broker-openapi"
+type = "tcp"
+localIP = "172.20.55.35"
+localPort = 8082
+remotePort = 30009
