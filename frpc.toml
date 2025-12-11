@@ -1,0 +1,9 @@
+serverAddr = "38.47.106.36"
+serverPort = 5432
+
+[[proxies]]
+name = "moonite_db"
+type = "tcp" 
+localIP = "172.16.0.10"
+localPort = 5432
+remotePort = 1111
