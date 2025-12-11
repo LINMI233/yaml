@@ -2,7 +2,7 @@
 
 # 服务器配置
 serverAddr = "149.62.44.70"
-serverPort = 75010
+serverPort = 7501
 
 # 日志配置
 log.to = "console"
